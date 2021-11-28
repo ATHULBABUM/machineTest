@@ -1,0 +1,18 @@
+<div style="padding: 5%;">
+    <table class="table table-striped table-dark">
+        <thead >
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">full Name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allUsers; let indexOfelement=index">
+            <th scope="row">{{indexOfelement+1}}</th>
+            <td (click)="clickedUser(user._id)">{{user.firstName + " " +user.lastName}}</td>
+            <td>{{user.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

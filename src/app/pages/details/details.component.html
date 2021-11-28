@@ -1,0 +1,35 @@
+
+<div style="padding: 5%;">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <h2 class="mb-5 col-sm-9"> User Details</h2>
+    </div>
+    <div *ngIf="resultData" >
+        <div class="row mb-2">
+            <h5 class="col-sm-5" style="text-align: center;"> Full Name : </h5>
+            <div class="col-sm-7">{{ resultData.firstName + " "+ resultData.lastName}}</div>
+        </div>
+        <div class="row mb-2">
+            <h5 class="col-sm-5" style="text-align: center;"> Phone : </h5>
+            <div class="col-sm-7">{{ resultData.phone }}</div>
+        </div>
+        <div class="row mb-2">
+            <h5 class="col-sm-5" style="text-align: center;"> E-mail : </h5>
+            <div class="col-sm-7">{{ resultData.email }}</div>
+        </div>
+        <div class="row mb-2">
+            <h5 class="col-sm-5" style="text-align: center;"> Experience : </h5>
+            <div class="col-sm-7">{{ resultData.experience }}</div>
+        </div>
+        <div class="row mb-2">
+            <h5 class="col-sm-5" style="text-align: center;"> Introduction : </h5>
+            <div class="col-sm-7">{{ resultData.introduction }}</div>
+        </div>
+        <div class="row mb-2">
+            <h5 class="col-sm-5" style="text-align: center;"> Achievements : </h5>
+            <div class="col-sm-7">{{ resultData.achievements }}</div>
+        </div>
+    </div>
+
+
+</div>

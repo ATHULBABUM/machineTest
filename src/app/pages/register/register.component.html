@@ -1,0 +1,106 @@
+
+<div style="padding: 5%">
+    <h2 class="formCenter"> Register Form </h2>
+    <form [formGroup]="registerForm" (ngSubmit)="signUp(registerForm)">
+        <div class="formDiv">
+            <div class="row px-3 ">
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm">First Name :</h6>
+                </label> 
+                <div class="col-sm-9">
+                    <input type="text" id="firstName" name="firstName" class="form-control mb-4" formControlName="firstName"
+                        [ngClass]="{'is-invalid':submitted && f.firstName.errors}" placeholder="Enter first name" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First name is required </div>
+                        </div>
+                </div>
+       
+            </div>
+            <div class="row px-3 "> 
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm"> Last Name: </h6>
+                </label> 
+                <div class="col-sm-9">
+                    <input type="text" id="lastName" name="lastName"  formControlName="lastName" class="form-control mb-4" 
+                        [ngClass]="{'is-invalid':submitted && f.lastName.errors}"  placeholder="Enter last name" />
+                        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastName.errors.required">Last name is required </div>
+                        </div>
+                </div>
+          
+            </div>
+            <div class="row px-3 "> 
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm">Email Address : </h6>
+                </label> 
+                <div class="col-sm-9">
+                    <input type="text" id="email" name="email"  formControlName="email" class="form-control mb-4" 
+                        [ngClass]="{'is-invalid':submitted && f.email.errors}" placeholder="Enter a valid email address" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required </div>
+                            <div *ngIf="f.email.errors.email">Email must be a valid one </div>
+                        </div>
+                </div>
+       
+            </div>
+            <div class="row px-3"> 
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm">Introduction : </h6>
+                </label> 
+                <div class="col-sm-9">
+                    <input type="text" id="introduction" name="introduction"  formControlName="introduction" class="form-control mb-4" 
+                        [ngClass]="{'is-invalid':submitted && f.introduction.errors}" placeholder="Enter an introduction" />
+                        <div *ngIf="submitted && f.introduction.errors" class="invalid-feedback">
+                            <div *ngIf="f.introduction.errors.required">Introduction is required </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row px-3 "> 
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm">Phone : </h6>
+                </label>
+                <div class="col-sm-9">
+                    <input type="number" id="phone" name="phone"  formControlName="phone" class="form-control mb-4" 
+                        [ngClass]="{'is-invalid':submitted && f.phone.errors}" placeholder="Enter a valid phone number" />
+                        <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                            <div *ngIf="f.phone.errors.required">Phone number is required </div>
+                            <div *ngIf="f.phone.errors.min">Should be a valid 10 digit number</div>
+                            <div *ngIf="f.phone.errors.max">Should be a valid 10 digit number</div>
+                        </div>
+                </div>
+            </div>
+            <div class="row px-3 "> 
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm">Experience : </h6>
+                </label>
+                <div class="col-sm-9">
+                    <input type="number" id="experience" name="experience"  formControlName="experience" class="form-control mb-4" 
+                        [ngClass]="{'is-invalid':submitted && f.experience.errors}" placeholder="Enter experience in years" />
+                        <div *ngIf="submitted && f.experience.errors" class="invalid-feedback">
+                            <div *ngIf="f.experience.errors.required">Experience is required </div>
+                        </div>
+                </div>
+            </div>
+            <div class="row px-3"> 
+                <label class="mb-1 col-sm-3">
+                    <h6 class="mb-0 text-sm"> Achievements: </h6>
+                </label>
+                <div class="col-sm-9">
+                    <input type="text" id="achievements" name="achievements"  formControlName="achievements" class="form-control mb-4" 
+                        [ngClass]="{'is-invalid':submitted && f.achievements.errors}"  placeholder="Enter Achievements with a comma (,) separation" />
+                        <div class="missingError" *ngIf="submitted && f.achievements.errors" class="invalid-feedback">
+                            <div *ngIf="f.achievements.errors.required">Achievements is required </div>
+                        </div>
+                </div>
+            </div>
+            <br>
+            <!-- <div class="row px-3 mb-4">
+                
+            </div> -->
+        </div>
+        <div class="row mb-3 mt-2 px-3"> 
+            <button type="submit" class="btn btn-primary text-center">Register</button>
+        </div>
+    </form>
+
+</div>
