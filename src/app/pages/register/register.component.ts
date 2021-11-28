@@ -46,11 +46,9 @@ export class RegisterComponent implements OnInit {
           if (JSON.parse(JSON.stringify(data)).message == "Success"){
             this.submitted = false;
             this.ngOnInit();
-          } else {
-            alert("Duplicate data entered")
           }
         },(err)=> {
-          alert(err.error);
+          alert(err.error.message ? err.error.message : err.error);
         })
     }
   }
