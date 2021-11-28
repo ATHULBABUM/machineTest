@@ -41,16 +41,16 @@ export class RegisterComponent implements OnInit {
       return;
     } else {
       let userDetails = formData.value;
-      userDetails.phone = JSON.stringify(formData.value.phone);
       this.userSerivces.signup(userDetails)
         .subscribe((data)=> {
           if (JSON.parse(JSON.stringify(data)).message == "Success"){
             this.submitted = false;
             this.ngOnInit();
+          } else {
+            alert("Duplicate data entered")
           }
         },(err)=> {
           alert(err.error);
-          // console.log("Here errros", err.error)
         })
     }
   }
